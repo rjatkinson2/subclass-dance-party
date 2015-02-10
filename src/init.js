@@ -27,6 +27,15 @@ $(document).ready(function(){
       $("body").width() * Math.random(),
       Math.random() * 1000
     );
+
+    if ( dancer.image ) {
+      dancer.setPosition(
+        ($('body').innerHeight() - dancer.imageHeight) * Math.random(),
+        ($('body').innerWidth() - dancer.imageWidth) * Math.random(),
+        Math.random() * 1000
+      );
+    }
+
     $('body').append(dancer.$node);
   });
 });

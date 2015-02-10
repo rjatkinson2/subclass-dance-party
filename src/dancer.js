@@ -30,13 +30,13 @@ Dancer.prototype.setPosition = function(top, left) {
 
 Dancer.prototype.setImage = function(image, width, height) {
   this.image = image || this.image;
-  this.imageWidth = width || this.width;
-  this.imageHeight = height || this.height;
+  this.imageWidth = width || this.imageWidth;
+  this.imageHeight = height || this.imageHeight;
   var props = {
-    background-image: this.image,
-    display: block,
-    width: this.imageWidth,
-    height: this.imageHeight
+    'background-image': 'url(' + this.image + ')',
+    'display': 'block',
+    'width': this.imageWidth,
+    'height': this.imageHeight
   };
-  this.$node.css(props);
+  this.$node.css(props).addClass('gif');
 };

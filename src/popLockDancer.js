@@ -1,7 +1,7 @@
 var PopLockDancer = function(top, left, timeBetweenSteps) {
-  this.image = 'assets/thepoplockdancer.gif';
-  this.imageWidth = '100px';
-  this.imageHeight = '100px';
+  this.image = 'assets/poplocking.gif';
+  this.imageWidth = 100;
+  this.imageHeight = 100;
   Dancer.apply(this, arguments);
 };
 

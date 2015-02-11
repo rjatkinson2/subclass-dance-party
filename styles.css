@@ -16,6 +16,8 @@ body, a:link, a:visited, a:active{
 .topbar{
   height:32px;
   background-color: #555;
+  position:relative;
+  z-index:5;
 }
 .title{
   background-color: #777;
@@ -24,6 +26,11 @@ body, a:link, a:visited, a:active{
   border:10px solid red;
   border-radius:10px;
   position:absolute;
+  -ms-transition: 200ms;
+  -o-transition: 200ms;
+  -moz-transition: 200ms;
+  -webkit-transition: 200ms;
+  transition: 200ms;
 }
 
 .gif{
@@ -37,4 +44,13 @@ body, a:link, a:visited, a:active{
 }
 
 .popLock{
+  background-size: 80%;
+}
+
+.bigger{
+  -ms-transform: scale(1.5,1.5);
+  -o-transform: scale(1.5,1.5);
+  -moz-transform: scale(1.5,1.5);
+  -webkit-transform: scale(1.5,1.5);
+  transform: scale(1.5,1.5);
 }

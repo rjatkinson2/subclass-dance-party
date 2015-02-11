@@ -1,5 +1,5 @@
 var Dancer = function(top, left, timeBetweenSteps) {
-
+  this.dancerName = "Dancer";
   this.top = top;
   this.left = left;
   this.timeBetweenSteps = timeBetweenSteps;
@@ -40,3 +40,30 @@ Dancer.prototype.setImage = function(image, width, height) {
   };
   this.$node.css(props).addClass('gif');
 };
+
+Dancer.prototype.lineUp = function(startTop, startLeft, endTop, endLeft) {
+  var top = ( endTop - startTop  ) * ( this.index / window.totalDancers[this.dancerName] );
+  var left = endLeft || $(window).width()/2;
+  this.setPosition(top, left);
+  this.resize(50);
+};
+
+Dancer.prototype.resize = function(multiplier) {
+  var props = {
+    'width': this.imageWidth - ( multiplier * ( window.totalDancers[this.dancerName] / this.index ) ),
+    'height': this.imageHeight - ( multiplier * ( window.totalDancers[this.dancerName] / this.index ) )
+  };
+  this.$node.css(props);
+}
+
+
+
+
+
+
+
+
+
+
+
+

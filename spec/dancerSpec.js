@@ -33,6 +33,4 @@ describe("dancer", function() {
     expect(dancer.$node.css('left')).to.equal('20px');
   });
 
-
-
 });

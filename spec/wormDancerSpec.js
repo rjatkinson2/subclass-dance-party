@@ -13,10 +13,14 @@ describe("wormDancer", function() {
     expect(wormDancer.$node).to.be.an.instanceof(jQuery);
   });
 
-  it("should have a step function that makes its node blink", function() {
-    sinon.spy(wormDancer.$node, 'toggle');
-    wormDancer.step();
-    expect(wormDancer.$node.toggle.called).to.be.true;
+  it("should load the correct image file", function() {
+    expect('url(file:///Users/student/repo/2015-02-subclass-dance-party/'+ wormDancer.image + ')').to.be.equal(wormDancer.$node.css('background-image'));
+  });
+
+  it('should add dancers within the proper window boundaries', function() {
+    var top = parseInt(wormDancer.$node.css('top').replace('px', '') ) + wormDancer.$node.outerHeight();
+    var left = parseInt(wormDancer.$node.css('left').replace('px', '') ) + wormDancer.$node.outerWidth();
+    expect(top).to.be.lessThan( $(window).height() );
   });
 
   describe("dance", function(){

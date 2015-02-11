@@ -13,10 +13,14 @@ describe("popLockDancer", function() {
     expect(popLockDancer.$node).to.be.an.instanceof(jQuery);
   });
 
-  it("should have a step function that makes its node blink", function() {
-    sinon.spy(popLockDancer.$node, 'toggle');
-    popLockDancer.step();
-    expect(popLockDancer.$node.toggle.called).to.be.true;
+  it("should load the correct image file", function() {
+    expect('url(file:///Users/student/repo/2015-02-subclass-dance-party/'+ popLockDancer.image + ')').to.be.equal(popLockDancer.$node.css('background-image'));
+  });
+
+  it('should add dancers within the proper window boundaries', function() {
+    var top = parseInt(popLockDancer.$node.css('top').replace('px', '') ) + popLockDancer.$node.outerHeight();
+    var left = parseInt(popLockDancer.$node.css('left').replace('px', '') ) + popLockDancer.$node.outerWidth();
+    expect(top).to.be.lessThan( $(window).height() );
   });
 
   describe("dance", function(){

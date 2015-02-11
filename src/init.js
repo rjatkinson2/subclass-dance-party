@@ -42,15 +42,16 @@ $(document).ready(function(){
       );
     }
 
-    $('body').append(dancer.$node);
+    $('.dancefloor').append(dancer.$node);
     window.dancers.push(dancer);
     dancer.index = totalDancers[dancerMakerFunctionName];
+
   });
 
   $(".lineUpButton").on("click", function(event){
-    var startTop = $(window).height() * 0.2;
+    var startTop = $(window).height() * 0.45;
     var startLeft = $(window).width() * 0.5;
-    var endTop = $(window).height();
+    var endTop = $(window).height() * 0.8;
     var endLeft = $(window).width() * 0.5;
     for(var i = 0; i < window.dancers.length; i++){
       dancers[i].lineUp(startTop,startLeft,(endTop - dancers[i].imageWidth / 3 ),endLeft);

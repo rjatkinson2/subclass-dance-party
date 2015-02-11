@@ -42,7 +42,7 @@ Dancer.prototype.setImage = function(image, width, height) {
 };
 
 Dancer.prototype.lineUp = function(startTop, startLeft, endTop, endLeft) {
-  var top = ( endTop - startTop  ) * ( this.index / window.totalDancers[this.dancerName] );
+  var top = startTop + ( endTop - startTop  ) * ( this.index / window.totalDancers[this.dancerName] );
   var left = endLeft || $(window).width()/2;
   this.setPosition(top, left);
   this.resize(50);

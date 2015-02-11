@@ -5,6 +5,13 @@ var PopLockDancer = function(top, left, timeBetweenSteps) {
   Dancer.apply(this, arguments);
   this.dancerName = "PopLockDancer";
   this.$node.addClass('popLock');
+  this.$node.hover(function(){
+    $(this).addClass('flipped');
+    var $context = $(this);
+    setTimeout(function(){
+      $context.removeClass('flipped');
+    }, 500);
+  });
 };
 
 PopLockDancer.prototype = Object.create(Dancer.prototype);

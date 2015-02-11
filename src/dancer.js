@@ -56,6 +56,15 @@ Dancer.prototype.resize = function(multiplier) {
   this.$node.css(props);
 }
 
+Dancer.prototype.danceOff = function(){
+  var left = $(window).width() / 2 - 50 + this.danceOffOffset;
+  this.setPosition(this.top, left);
+  var $context = this.$node;
+  setTimeout(function(){
+    $context.addClass('goToHorizon');
+  },5000);
+};
+
 
 
 

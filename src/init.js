@@ -51,11 +51,24 @@ $(document).ready(function(){
   $(".lineUpButton").on("click", function(event){
     var startTop = $(window).height() * 0.45;
     var startLeft = $(window).width() * 0.5;
-    var endTop = $(window).height() * 0.8;
+    var endTop = $(window).height() * 0.78;
     var endLeft = $(window).width() * 0.5;
     for(var i = 0; i < window.dancers.length; i++){
       dancers[i].lineUp(startTop,startLeft,(endTop - dancers[i].imageWidth / 3 ),endLeft);
     }
+  });
+
+  $(".danceOff").on("click", function(event){
+    var dancerOne = dancers.pop();
+    var dancerTwo;
+    for ( var i = 0; i < dancers.length; i++ ) {
+      if ( dancers[i].dancerName !== dancerOne.dancerName ) {
+        dancerTwo = dancers[i];
+        dancers = dancers.slice(0, i).concat(dancers.slice(i+1));
+      }
+    }
+    dancerOne.danceOff();
+    dancerTwo.danceOff();
   });
 });
 

@@ -22,6 +22,7 @@ body, a:link, a:visited, a:active{
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom center;
+  overflow: hidden;
 }
 .title, .addDancerButton{
   padding:5px 12px;
@@ -55,6 +56,43 @@ body, a:link, a:visited, a:active{
 }
 
 .worm{
+  cursor: pointer;
+}
+
+.popUp {
+  -ms-transform: rotate(-45deg) translateY(-70%)!important;
+  -o-transform: rotate(-45deg) translateY(-70%)!important;
+  -moz-transform: rotate(-45deg) translateY(-70%)!important;
+  -webkit-transform: rotate(-45deg) translateY(-70%)!important;
+  transform: rotate(-45deg) translateY(-70%)!important;
+  -ms-transform-orign: 50% 50%;
+  -o-transform-orign: 50% 50%;
+  -moz-transform-orign: 50% 50%;
+  -webkit-transform-orign: 50% 50%;
+  transform-orign: 50% 50%;
+  -ms-transition: 500ms;
+  -o-transition: 500ms;
+  -moz-transition: 500ms;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
+.popDown {
+  -ms-transform: rotate(45deg)!important;
+  -o-transform: rotate(45deg)!important;
+  -moz-transform: rotate(45deg)!important;
+  -webkit-transform: rotate(45deg)!important;
+  transform: rotate(45deg) !important;
+  -ms-transform-orign: 50% 50%;
+  -o-transform-orign: 50% 50%;
+  -moz-transform-orign: 50% 50%;
+  -webkit-transform-orign: 50% 50%;
+  transform-orign: 50% 50%;
+  -ms-transition: 500ms;
+  -o-transition: 500ms;
+  -moz-transition: 500ms;
+  -webkit-transition: 500ms;
+  transition: 500ms;
 }
 
 .popLock{
@@ -76,4 +114,30 @@ body, a:link, a:visited, a:active{
   -moz-transform: rotate(180deg);
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
+}
+
+.goToHorizon {
+  top: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  margin: auto;
+  -ms-transform: scale(0) !important;
+  -o-transform: scale(0) !important;
+  -moz-transform: scale(0) !important;
+  -webkit-transform: scale(0) !important;
+  transform: scale(0) !important;
+  -ms-transition: 3s;
+  -o-transition: 3s;
+  -moz-transition: 3s;
+  -webkit-transition: 3s;
+  transition: 3s;
+}
+
+.controls {
+  float: left;
+  display: block;
+  line-height;
+  width: 8em;
+  margin: 0.25em 0.5em 0 1em;
 }

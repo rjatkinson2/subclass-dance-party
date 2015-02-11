@@ -1,4 +1,5 @@
 var PopLockDancer = function(top, left, timeBetweenSteps) {
+  this.danceOffOffset = -200;
   this.image = 'assets/poplocking.gif';
   this.imageWidth = 250;
   this.imageHeight = 250;
